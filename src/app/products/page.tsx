@@ -19,7 +19,7 @@ export default async function ProductsPage() {
     <div className="flex-1 w-full bg-slate-50 dark:bg-slate-900/10 py-12 fade-in-up">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header Title */}
+        {/* Header Title c*/}
         <div className="text-left mb-10 flex flex-col gap-2">
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-accent-blue ">
             Pharmaceutical Catalog
