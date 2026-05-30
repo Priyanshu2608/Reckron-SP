@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Pill, ShieldCheck } from "lucide-react";
+import { Menu, X, ShieldCheck, Mail, Phone, MapPin } from "lucide-react";
+import Modal from "@/components/ui/Modal";
+import EnquiryForm from "@/components/public/EnquiryForm";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -15,7 +17,31 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
   const pathname = usePathname();
+
+  const [contact, setContact] = useState({
+    email: "info@reckronsp.com",
+    phone: "+1 (555) 019-2834",
+    address: "100 Innovation Way, Biotech Park, Suite 400"
+  });
+
+  useEffect(() => {
+    const fetchContact = async () => {
+      try {
+        const res = await fetch("/api/admin/contact");
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.email) {
+            setContact(data);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load navbar contact info:", err);
+      }
+    };
+    fetchContact();
+  }, []);
 
   // Don't show public navbar on admin pages
   const isAdmin = pathname.startsWith("/admin");
@@ -27,7 +53,6 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            
             <span className="font-bold text-xl text-primary tracking-tight">
               Reckron<span className="text-accent-blue">SP</span>
             </span>
@@ -68,12 +93,12 @@ export default function Navbar() {
             >
               <ShieldCheck className="w-5 h-5" />
             </Link>
-            <Link
-              href="/contact"
-              className="px-5 py-2 rounded-xl bg-primary text-white hover:bg-accent-blue hover:shadow-lg hover:shadow-accent-blue/10 transition-all font-semibold text-sm"
+            <button
+              onClick={() => setIsEnquiryModalOpen(true)}
+              className="px-5 py-2 rounded-xl bg-primary text-white hover:bg-accent-blue hover:shadow-lg hover:shadow-accent-blue/10 transition-all font-semibold text-sm cursor-pointer"
             >
               Enquire Now
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -121,18 +146,87 @@ export default function Navbar() {
                 >
                   <ShieldCheck className="w-4 h-4" /> Admin Login
                 </Link>
-                <Link
-                  href="/contact"
-                  onClick={() => setIsOpen(false)}
-                  className="w-full text-center px-4 py-2.5 rounded-xl bg-primary text-white hover:bg-accent-blue transition-colors font-semibold text-sm shadow-sm"
+                <button
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsEnquiryModalOpen(true);
+                  }}
+                  className="w-full text-center px-4 py-2.5 rounded-xl bg-primary text-white hover:bg-accent-blue transition-colors font-semibold text-sm shadow-sm cursor-pointer"
                 >
                   Enquire Now
-                </Link>
+                </button>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Enquiry Modal Dialog with Direct Contact Info */}
+      <Modal
+        isOpen={isEnquiryModalOpen}
+        onClose={() => setIsEnquiryModalOpen(false)}
+        title="Send a Product Enquiry"
+        size="xl"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8">
+          {/* Left panel: Direct Contact Info */}
+          <div className="lg:col-span-2 bg-slate-950 text-white p-6 rounded-2xl flex flex-col justify-between space-y-8">
+            <div className="space-y-4">
+              <h4 className="text-lg font-extrabold text-white tracking-tight">Direct Contact</h4>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                If you prefer to contact us directly or have regulatory questions, feel free to reach out via phone or email.
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="p-2 bg-slate-900 border border-slate-800 rounded-lg text-accent-blue shrink-0">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Phone</span>
+                  <a href={`tel:${contact.phone}`} className="text-sm font-semibold hover:text-accent-blue transition-colors break-all">
+                    {contact.phone}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="p-2 bg-slate-900 border border-slate-800 rounded-lg text-accent-blue shrink-0">
+                  <Mail className="w-4 h-4" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Email Address</span>
+                  <a href={`mailto:${contact.email}`} className="text-sm font-semibold hover:text-accent-blue transition-colors break-all">
+                    {contact.email}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="p-2 bg-slate-900 border border-slate-800 rounded-lg text-accent-blue shrink-0">
+                  <MapPin className="w-4 h-4" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Office Address</span>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    {contact.address}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-slate-900 text-[10px] text-slate-500 font-medium">
+              Reckron SP Corporate Portal
+            </div>
+          </div>
+
+          {/* Right panel: Enquiry Form */}
+          <div className="lg:col-span-3">
+            <EnquiryForm onSuccess={() => setTimeout(() => setIsEnquiryModalOpen(false), 2200)} />
+          </div>
+        </div>
+      </Modal>
     </header>
   );
 }
