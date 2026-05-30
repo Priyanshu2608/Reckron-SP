@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     "Reckron SP is a premium pharmaceutical company specializing in high-quality therapeutic Products, manufacturing excellence, and global healthcare solutions.",
   keywords: ["pharmaceutical", "medicine", "healthcare", "therapeutics", "Products", "reckron"],
   authors: [{ name: "Reckron SP" }],
+  icons: {
+    icon: "/favico.ico",
+  },
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
   openGraph: {
     title: "Reckron SP | Innovations in Global Healthcare",
