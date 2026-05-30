@@ -28,7 +28,16 @@ export const revalidate = 0;
 
 export default async function AboutPage() {
   const cms = await getAboutCms();
-  const aboutBrief = (await WebsiteContent.findOne({ key: "home_about" }))?.value || DEFAULT_CMS.home_about;
+  let aboutBrief = DEFAULT_CMS.home_about;
+  try {
+    await connectToDatabase();
+    const doc = await WebsiteContent.findOne({ key: "home_about" });
+    if (doc && doc.value) {
+      aboutBrief = doc.value;
+    }
+  } catch (err) {
+    console.error("About page: Failed to fetch home_about from database:", err);
+  }
 
   return (
     <div className="flex flex-col w-full fade-in-up">

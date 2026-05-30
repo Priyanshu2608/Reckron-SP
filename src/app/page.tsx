@@ -30,7 +30,11 @@ async function getCmsContent(key: string) {
 export const revalidate = 0; // Disable static caching so admin edits reflect instantly
 
 export default async function Home() {
-  await connectToDatabase();
+  try {
+    await connectToDatabase();
+  } catch (err) {
+    console.error("Database connection failed on Home page:", err);
+  }
 
   // Parallel fetches
   const heroContent = await getCmsContent("home_hero");

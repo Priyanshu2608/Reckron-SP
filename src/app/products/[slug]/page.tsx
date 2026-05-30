@@ -40,9 +40,14 @@ export const revalidate = 0;
 
 export default async function ProductDetailPage({ params }: IProductPageProps) {
   const { slug } = await params;
-  await connectToDatabase();
+  let product = null;
+  try {
+    await connectToDatabase();
+    product = await Product.findOne({ slug }).populate("category", "name slug");
+  } catch (err) {
+    console.error("Failed to load product details page DB query:", err);
+  }
 
-  const product = await Product.findOne({ slug }).populate("category", "name slug");
   if (!product) {
     notFound();
   }

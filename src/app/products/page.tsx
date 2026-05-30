@@ -5,7 +5,11 @@ import ProductsContainer from "@/components/public/ProductsContainer";
 export const revalidate = 0;
 
 export default async function ProductsPage() {
-  await connectToDatabase();
+  try {
+    await connectToDatabase();
+  } catch (err) {
+    console.error("Products page database connection failure:", err);
+  }
 
   // Fetch categories sorted alphabetically
   let categories: any[] = [];
