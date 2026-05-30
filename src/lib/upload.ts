@@ -28,7 +28,7 @@ export async function uploadImage(fileBuffer: Buffer, fileName: string): Promise
       return new Promise((resolve, reject) => {
         const uploadStream = cloudinary.uploader.upload_stream(
           {
-            folder: "reckron-pharma",
+            folder: "reckron-sp",
           },
           (error, result) => {
             if (error) return reject(error);

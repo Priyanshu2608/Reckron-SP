@@ -61,7 +61,7 @@ export default async function ProductDetailPage({ params }: IProductPageProps) {
   }
 
   return (
-    <div className="flex-1 w-full bg-slate-50 dark:bg-slate-900/10 py-12 fade-in-up">
+    <div className="flex-1 w-full bg-slate-50 py-12 fade-in-up">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Back Link / Breadcrumb */}
@@ -76,14 +76,14 @@ export default async function ProductDetailPage({ params }: IProductPageProps) {
         </div>
 
         {/* Dynamic Detail Viewer */}
-        <div className="bg-card dark:bg-slate-950 border border-border rounded-3xl p-6 sm:p-10 shadow-sm mb-16">
+        <div className="bg-white border border-slate-100 rounded-3xl p-6 sm:p-10 shadow-sm mb-16">
           <ProductDetailsClient product={JSON.parse(JSON.stringify(product))} />
         </div>
 
         {/* Related Products */}
         {relatedProducts.length > 0 && (
-          <div className="border-t border-border/80 pt-16 text-left">
-            <h2 className="text-2xl font-extrabold text-primary dark:text-white mb-8">
+          <div className="border-t border-slate-100 pt-16 text-left">
+            <h2 className="text-2xl font-extrabold text-slate-900 mb-8">
               Related Products in {(product.category as any).name}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

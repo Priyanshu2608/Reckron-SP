@@ -1,4 +1,4 @@
-# Reckron Pharma Portal
+# Reckron SP Portal
 
 A modern, premium, production-ready pharmaceutical company portal built with **Next.js 16 (App Router)**, **Tailwind CSS v4**, **MongoDB + Mongoose**, and **JWT-based session authentication**.
 
@@ -40,8 +40,8 @@ A modern, premium, production-ready pharmaceutical company portal built with **N
 ### 1. Configure Mappings
 Create a `.env.local` file in the root directory (defaults are set up already):
 ```env
-MONGODB_URI=mongodb://localhost:27017/reckron_pharma
-JWT_SECRET=super-secret-reckron-pharma-jwt-token-2026-key
+MONGODB_URI=mongodb://localhost:27017/reckron_sp
+JWT_SECRET=super-secret-reckron-sp-jwt-token-2026-key
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 
 # Optional SMTP Mail
@@ -49,7 +49,7 @@ SMTP_HOST=
 SMTP_PORT=587
 SMTP_USER=
 SMTP_PASS=
-SMTP_FROM=no-reply@reckronpharma.com
+SMTP_FROM=no-reply@reckronsp.com
 
 # Optional Cloudinary Uploads (Fallback: public/uploads)
 CLOUDINARY_CLOUD_NAME=

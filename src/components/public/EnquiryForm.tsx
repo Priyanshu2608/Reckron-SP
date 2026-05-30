@@ -61,7 +61,7 @@ export default function EnquiryForm({ preselectedProduct = "", onSuccess }: IEnq
         const res = await fetch("/api/public/products?limit=50");
         if (res.ok) {
           const data = await res.json();
-          const names = data.products.map((p: any) => p.name);
+          const names = (data.products || []).map((p: any) => p.name);
           // If preselected product is not in the list, prepend/append it
           if (preselectedProduct && !names.includes(preselectedProduct)) {
             names.unshift(preselectedProduct);
@@ -111,17 +111,17 @@ export default function EnquiryForm({ preselectedProduct = "", onSuccess }: IEnq
 
   if (done) {
     return (
-      <div className="py-8 text-center flex flex-col items-center gap-4 text-slate-800 dark:text-slate-100">
-        <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-emerald-500 flex items-center justify-center">
+      <div className="py-8 text-center flex flex-col items-center gap-4 text-slate-800">
+        <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-500 flex items-center justify-center">
           <CheckCircle2 className="w-10 h-10" />
         </div>
         <h3 className="text-xl font-bold">Thank You!</h3>
-        <p className="text-sm text-muted max-w-sm leading-relaxed">
+        <p className="text-sm text-slate-600 max-w-sm leading-relaxed">
           Your therapeutic Product enquiry has been logged successfully. Our regulatory desk will contact you with product spec dossiers shortly.
         </p>
         <button
           onClick={() => setDone(false)}
-          className="mt-2 px-5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs font-bold transition-colors"
+          className="mt-2 px-5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold transition-colors"
         >
           Submit Another Enquiry
         </button>

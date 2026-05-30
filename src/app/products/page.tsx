@@ -16,17 +16,19 @@ export default async function ProductsPage() {
   }
 
   return (
-    <div className="flex-1 w-full bg-slate-50 dark:bg-slate-900/10 py-12 fade-in-up">
+    <div className="flex-1 w-full bg-slate-50 py-12 fade-in-up">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header Title c*/}
-        <div className="text-left mb-10 flex flex-col gap-2">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-accent-blue ">
+        {/* Header Title */}
+        <div className="text-left mb-12 flex flex-col gap-3">
+          <span className="font-extrabold text-[10px] uppercase tracking-widest text-accent-blue">
+            Regulatory Product Index
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
             Pharmaceutical Catalog
           </h1>
-          <p className="text-muted text-sm max-w-2xl leading-relaxed">
-            Search our regulatory-certified Product catalog. You can filter by therapy categories or request bulk dossiers.
-          </p>
+    
+          
         </div>
 
         {/* Catalog container */}

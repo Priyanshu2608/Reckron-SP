@@ -484,7 +484,7 @@ export default function AdminProductsPage() {
                 <label className="text-[10px] font-bold text-slate-500 uppercase">SEO Title</label>
                 <input
                   type="text"
-                  placeholder="e.g. Paracetamol tablets wholesale | Reckron"
+                  placeholder="e.g. Paracetamol tablets wholesale | Reckron SP"
                   {...register("seoTitle")}
                   className="px-3 py-2 rounded border border-slate-200 bg-white text-xs focus:outline-none focus:border-black"
                 />

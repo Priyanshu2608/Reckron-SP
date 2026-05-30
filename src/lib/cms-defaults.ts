@@ -9,21 +9,21 @@ export const DEFAULT_CMS = {
   home_about: {
     tag: "Who We Are",
     title: "Dedicated to Making Good Quality Medicines",
-    description: "Reckron Pharma is a small pharmaceutical business committed to providing reliable Products. We focus on care, quality ingredients, and safe manufacturing standards to bring affordable healthcare solutions to our customers. We focus on what matters most: delivering dependable medicines that people can trust.",
+    description: "Reckron SP is a small pharmaceutical business committed to providing reliable Products. We focus on care, quality ingredients, and safe manufacturing standards to bring affordable healthcare solutions to our customers. We focus on what matters most: delivering dependable medicines that people can trust.",
     mission: "To make safe, reliable, and high-quality medicines affordable for everyone.",
     vision: "To be a trusted provider of quality medicine Products.",
-    experienceYears: 10,
+    experienceYears: 12,
   },
   statistics: {
     items: [
       { count: "50+", label: "Standard Medicines" },
-      { count: "10+", label: "Years of Care" },
+      { count: "12+", label: "Years of Care" },
       { count: "100%", label: "Quality Focus" },
       { count: "100%", label: "Safe Ingredients" },
     ],
   },
   why_choose_us: {
-    title: "Why Choose Reckron Pharma",
+    title: "Why Choose Reckron SP",
     items: [
       {
         title: "Safe Ingredients",

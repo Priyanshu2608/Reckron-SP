@@ -11,7 +11,7 @@ export async function sendEmail({ to, subject, text, html }: IEmailParams): Prom
   const host = process.env.SMTP_HOST;
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
-  const from = process.env.SMTP_FROM || "no-reply@reckronpharma.com";
+  const from = process.env.SMTP_FROM || "no-reply@reckronsp.com";
   const port = parseInt(process.env.SMTP_PORT || "587");
 
   // If SMTP configuration is incomplete, fallback to console logger

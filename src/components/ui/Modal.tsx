@@ -36,39 +36,39 @@ export default function Modal({ isOpen, onClose, title, children, size = "md" }:
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 overflow-y-auto flex justify-center items-start p-4 sm:p-6 md:p-10">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/35"
+            className="fixed inset-0 bg-slate-950/45 backdrop-blur-[3px] z-0"
           />
 
           {/* Modal Content */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.98, y: 10 }}
+            initial={{ opacity: 0, scale: 0.96, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.98, y: 10 }}
-            transition={{ duration: 0.2 }}
-            className={`relative w-full bg-white rounded border border-slate-200 shadow-xl flex flex-col overflow-hidden max-h-[90dvh] ${sizeClasses[size]}`}
+            exit={{ opacity: 0, scale: 0.96, y: 15 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className={`relative w-full bg-white rounded-3xl border border-slate-100 shadow-2xl flex flex-col overflow-hidden my-auto z-10 ${sizeClasses[size]}`}
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-white">
-              <h3 className="font-bold text-base text-slate-900">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100 bg-white sticky top-0 z-20">
+              <h3 className="font-extrabold text-base sm:text-lg text-slate-900 leading-tight">
                 {title}
               </h3>
               <button
                 onClick={onClose}
-                className="p-1 rounded text-slate-400 hover:bg-slate-100 hover:text-slate-800 transition-colors"
+                className="p-2 rounded-xl text-slate-400 hover:bg-slate-50 hover:text-slate-800 transition-colors border border-transparent hover:border-slate-100 cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {/* Body */}
-            <div className="p-6 overflow-y-auto flex-1">{children}</div>
+            <div className="p-6 sm:p-8 overflow-y-auto flex-1">{children}</div>
           </motion.div>
         </div>
       )}

@@ -117,12 +117,12 @@ export async function POST(request: Request) {
           <h4 style="margin: 0 0 8px 0; color: #4a5568;">Message:</h4>
           <p style="margin: 0; color: #2d3748; line-height: 1.5; white-space: pre-wrap;">${message}</p>
         </div>
-        <p style="margin-top: 25px; font-size: 12px; color: #a0aec0; text-align: center;">This email was generated automatically by the Reckron Pharma portal.</p>
+        <p style="margin-top: 25px; font-size: 12px; color: #a0aec0; text-align: center;">This email was generated automatically by the Reckron SP portal.</p>
       </div>
     `;
 
     // Attempt to send email
-    const companyEmail = process.env.SMTP_TO || "enquiries@reckronpharma.com";
+    const companyEmail = process.env.SMTP_TO || "enquiries@reckronsp.com";
     await sendEmail({
       to: companyEmail,
       subject: emailSubject,

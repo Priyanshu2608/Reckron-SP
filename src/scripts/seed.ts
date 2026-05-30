@@ -6,7 +6,7 @@ import path from "path";
 // Load environment variables from .env.local
 dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/reckron_pharma";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/reckron_sp";
 
 // Import models
 import Admin from "../models/Admin";
@@ -40,7 +40,7 @@ async function seed() {
   const admin = await Admin.create({
     username: "admin",
     passwordHash,
-    email: "admin@reckronpharma.com",
+    email: "admin@reckronsp.com",
     role: "admin",
   });
   console.log(`Admin user created: username="${admin.username}", password="password123"`);
@@ -86,7 +86,7 @@ async function seed() {
     seoMetadata: {
       title: "Reckron Atorvastatin 20mg | Heart Care",
       description: "Inquire about Reckron Atorvastatin 20mg tablets. High quality cholesterol management Product.",
-      keywords: "atorvastatin, cholesterol, heart care, tablets, reckron pharma",
+      keywords: "atorvastatin, cholesterol, heart care, tablets, reckron sp",
     },
   });
 
@@ -108,7 +108,7 @@ async function seed() {
     seoMetadata: {
       title: "Reckron Paracetamol 500mg | Pain Relief",
       description: "Request wholesale pricing for Reckron Paracetamol 500mg tablets. Reliable pain and fever relief.",
-      keywords: "paracetamol, fever reducer, pain relief, tablets, reckron pharma",
+      keywords: "paracetamol, fever reducer, pain relief, tablets, reckron sp",
     },
   });
 
@@ -153,7 +153,7 @@ async function seed() {
       name: "Dr. Catherine Mercer",
       role: "Family Physician",
       company: "Mercer Medical Clinic",
-      content: "Reckron Pharma has been our trusted supplier of essential medicines for over 5 years. Their consistency, safe packaging, and helpful customer support are excellent.",
+      content: "Reckron SP has been our trusted supplier of essential medicines for over 5 years. Their consistency, safe packaging, and helpful customer support are excellent.",
       rating: 5,
     },
     {
@@ -169,7 +169,7 @@ async function seed() {
   // 7. Seed Contact Info
   console.log("Seeding contact details...");
   await ContactInfo.create({
-    email: "info@reckronpharma.com",
+    email: "info@reckronsp.com",
     phone: "+1 (555) 019-2834",
     address: "Plot 42, Industrial Area Phase 1, Reckron House",
     whatsappNumber: "+15550192834",

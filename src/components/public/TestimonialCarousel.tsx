@@ -14,7 +14,7 @@ const DEFAULT_TESTIMONIALS = [
     name: "Dr. Catherine Mercer",
     role: "Chief Medical Officer",
     company: "Metro General Hospital",
-    content: "Reckron Pharma has been a trusted supplier of vital Products for our health network for over 5 years. Their batch-to-batch consistency and strict compliance documentation are impeccable.",
+    content: "Reckron SP has been a trusted supplier of vital Products for our health network for over 5 years. Their batch-to-batch consistency and strict compliance documentation are impeccable.",
     rating: 5,
     avatar: "",
   },

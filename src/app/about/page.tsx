@@ -14,12 +14,12 @@ async function getAboutCms() {
   }
   return {
     storyTitle: "Our Story",
-    storyText: "Reckron Pharma is a small, dedicated pharmaceutical business. We started with a simple goal: to make safe, reliable, and high-quality medicines accessible to our community. We focus on care, using premium certified ingredients, and keeping our operations simple and focused on quality.",
+    storyText: "Reckron SP is a small, dedicated pharmaceutical business. We started with a simple goal: to make safe, reliable, and high-quality medicines accessible to our community. We focus on care, using premium certified ingredients, and keeping our operations simple and focused on quality.",
     timeline: [
-      { year: "2016", title: "Business Inception", desc: "Started with a focus on quality essential medicine Products." },
-      { year: "2019", title: "Expanded Range", desc: "Added essential vitamins and pain relief tablets to our catalog." },
-      { year: "2022", title: "Local Trust", desc: "Partnered with local clinics and pharmacies to supply daily care medicines." },
-      { year: "2026", title: "Quality First", desc: "Continued commitment to safe packaging and reliable, honest medicine supply." },
+      { year: "2014", title: "Business Inception", desc: "Started with a focus on supplying reliable, high-quality essential medicines." },
+      { year: "2018", title: "Growing Reach", desc: "Expanded our distribution network to support more local healthcare providers." },
+      { year: "2022", title: "Local Trust", desc: "Partnered with clinics and pharmacies to ensure consistent supply of daily care products." },
+      { year: "2026", title: "Quality First", desc: "Continued commitment to safe packaging and reliable, honest pharmaceutical supply." },
     ],
   };
 }
@@ -35,7 +35,7 @@ export default async function AboutPage() {
       {/* Hero Banner */}
       <section className="bg-primary text-white py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">About Reckron Pharma</h1>
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">About Reckron SP</h1>
           <p className="text-slate-300 mt-4 max-w-2xl mx-auto leading-relaxed">
             Dedicated to making safe, reliable, and high-quality medicines for our community.
           </p>

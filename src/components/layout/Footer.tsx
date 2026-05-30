@@ -9,7 +9,7 @@ import { IContactInfo } from "@/models/ContactInfo";
 export default function Footer() {
   const pathname = usePathname();
   const [contact, setContact] = useState<Partial<IContactInfo>>({
-    email: "info@reckronpharma.com",
+    email: "info@reckronsp.com",
     phone: "+1 (555) 019-2834",
     address: "100 Innovation Way, Biotech Park, Suite 400",
     socialLinks: {
@@ -64,7 +64,7 @@ export default function Footer() {
                 <Pill className="w-5 h-5 rotate-45" />
               </div>
               <span className="font-bold text-lg text-white tracking-tight">
-                Reckron<span className="text-accent-blue">Pharma</span>
+                Reckron<span className="text-accent-blue">SP</span>
               </span>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed mt-2">
@@ -203,7 +203,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} Reckron Pharma Private Limited. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Reckron SP Private Limited. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/admin/login" className="hover:text-accent-blue transition-colors">
               Staff Dashboard

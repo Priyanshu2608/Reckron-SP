@@ -18,26 +18,26 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Reckron Pharma | Innovations in Global Healthcare",
-    template: "%s | Reckron Pharma",
+    default: "Reckron SP | Innovations in Global Healthcare",
+    template: "%s | Reckron SP",
   },
   description:
-    "Reckron Pharma is a premium pharmaceutical company specializing in high-quality therapeutic Products, manufacturing excellence, and global healthcare solutions.",
+    "Reckron SP is a premium pharmaceutical company specializing in high-quality therapeutic Products, manufacturing excellence, and global healthcare solutions.",
   keywords: ["pharmaceutical", "medicine", "healthcare", "therapeutics", "Products", "reckron"],
-  authors: [{ name: "Reckron Pharma" }],
+  authors: [{ name: "Reckron SP" }],
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
   openGraph: {
-    title: "Reckron Pharma | Innovations in Global Healthcare",
+    title: "Reckron SP | Innovations in Global Healthcare",
     description:
-      "Reckron Pharma is a premium pharmaceutical company specializing in high-quality therapeutic Products, manufacturing excellence, and global healthcare solutions.",
+      "Reckron SP is a premium pharmaceutical company specializing in high-quality therapeutic Products, manufacturing excellence, and global healthcare solutions.",
     url: "/",
-    siteName: "Reckron Pharma",
+    siteName: "Reckron SP",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Reckron Pharma",
+        alt: "Reckron SP",
       },
     ],
     locale: "en_US",

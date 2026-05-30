@@ -134,7 +134,7 @@ export default function AdminContactPage() {
                 <input
                   type="email"
                   required
-                  placeholder="e.g. info@reckronpharma.com"
+                  placeholder="e.g. info@reckronsp.com"
                   {...register("email", { required: "Email is required" })}
                   className="px-3 py-2 rounded border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:border-black"
                 />
@@ -197,7 +197,7 @@ export default function AdminContactPage() {
                 <label className="text-[10px] font-bold text-slate-500 uppercase">LinkedIn Profile</label>
                 <input
                   type="text"
-                  placeholder="https://linkedin.com/company/reckronpharma"
+                  placeholder="https://linkedin.com/company/reckronsp"
                   {...register("linkedin")}
                   className="px-3 py-2 rounded border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:border-black"
                 />
@@ -207,7 +207,7 @@ export default function AdminContactPage() {
                 <label className="text-[10px] font-bold text-slate-500 uppercase">Facebook Page</label>
                 <input
                   type="text"
-                  placeholder="https://facebook.com/reckronpharma"
+                  placeholder="https://facebook.com/reckronsp"
                   {...register("facebook")}
                   className="px-3 py-2 rounded border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:border-black"
                 />
@@ -219,7 +219,7 @@ export default function AdminContactPage() {
                 <label className="text-[10px] font-bold text-slate-500 uppercase">X / Twitter</label>
                 <input
                   type="text"
-                  placeholder="https://twitter.com/reckronpharma"
+                  placeholder="https://twitter.com/reckronsp"
                   {...register("twitter")}
                   className="px-3 py-2 rounded border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:border-black"
                 />
@@ -229,7 +229,7 @@ export default function AdminContactPage() {
                 <label className="text-[10px] font-bold text-slate-500 uppercase">YouTube Channel</label>
                 <input
                   type="text"
-                  placeholder="https://youtube.com/reckronpharma"
+                  placeholder="https://youtube.com/reckronsp"
                   {...register("youtube")}
                   className="px-3 py-2 rounded border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:border-black"
                 />
@@ -239,7 +239,7 @@ export default function AdminContactPage() {
                 <label className="text-[10px] font-bold text-slate-500 uppercase">Instagram</label>
                 <input
                   type="text"
-                  placeholder="https://instagram.com/reckronpharma"
+                  placeholder="https://instagram.com/reckronsp"
                   {...register("instagram")}
                   className="px-3 py-2 rounded border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:border-black"
                 />

@@ -30,7 +30,7 @@ export default function WhatsAppButton() {
   const isAdmin = pathname.startsWith("/admin");
   if (isAdmin) return null;
 
-  const whatsappUrl = `https://wa.me/${whatsappNumber.replace("+", "")}?text=Hello%20Reckron%20Pharma,%20I%20have%20an%20enquiry%20regarding%20your%20products.`;
+  const whatsappUrl = `https://wa.me/${whatsappNumber.replace("+", "")}?text=Hello%20Reckron%20SP,%20I%20have%20an%20enquiry%20regarding%20your%20products.`;
 
   return (
     <a
