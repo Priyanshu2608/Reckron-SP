@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { Pill, FolderOpen, Mail, Clock, ShieldCheck, ArrowRight } from "lucide-react";
+import { Pill, FolderOpen, Mail, Clock, ShieldCheck, ArrowRight, Users } from "lucide-react";
 import { connectToDatabase } from "@/lib/db";
 import Product from "@/models/Product";
 import Category from "@/models/Category";
 import Enquiry from "@/models/Enquiry";
+import NewsletterSubscriber from "@/models/NewsletterSubscriber";
 import { formatDate } from "@/lib/utils";
 
 export const revalidate = 0;
@@ -12,12 +13,13 @@ export default async function AdminDashboardPage() {
   await connectToDatabase();
 
   // Fetch stats in parallel
-  const [productCount, categoryCount, pendingEnquiryCount, totalEnquiryCount, recentEnquiries] =
+  const [productCount, categoryCount, pendingEnquiryCount, totalEnquiryCount, subscriberCount, recentEnquiries] =
     await Promise.all([
       Product.countDocuments({}),
       Category.countDocuments({}),
       Enquiry.countDocuments({ status: "pending" }),
       Enquiry.countDocuments({}),
+      NewsletterSubscriber.countDocuments({}),
       Enquiry.find({}).sort({ createdAt: -1 }).limit(5),
     ]);
 
@@ -52,11 +54,20 @@ export default async function AdminDashboardPage() {
     {
       title: "Total Enquiries",
       value: totalEnquiryCount,
-      desc: "Total client queries logged",
+      desc: "Total queries logged",
       icon: Mail,
       color: "text-indigo-500",
       bg: "bg-indigo-500/10",
       href: "/admin/dashboard/enquiries",
+    },
+    {
+      title: "Subscribers",
+      value: subscriberCount,
+      desc: "Newsletter audience size",
+      icon: Users,
+      color: "text-emerald-500",
+      bg: "bg-emerald-500/10",
+      href: "/admin/dashboard/subscribers",
     },
   ];
 
@@ -91,7 +102,7 @@ export default async function AdminDashboardPage() {
       </div>
 
       {/* Grid Stats Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         {cards.map((card, idx) => {
           const Icon = card.icon;
           return (

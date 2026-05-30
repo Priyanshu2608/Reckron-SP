@@ -12,6 +12,7 @@ import {
   LogOut,
   ChevronRight,
   Activity,
+  Users,
 } from "lucide-react";
 import { toast } from "@/hooks/useToast";
 
@@ -20,6 +21,7 @@ const adminLinks = [
   { name: "Products", href: "/admin/dashboard/products", icon: Pill },
   { name: "Categories", href: "/admin/dashboard/categories", icon: FolderOpen },
   { name: "Enquiries", href: "/admin/dashboard/enquiries", icon: Mail },
+  { name: "Subscribers", href: "/admin/dashboard/subscribers", icon: Users },
   { name: "CMS Content", href: "/admin/dashboard/content", icon: Edit },
   { name: "Contact Specs", href: "/admin/dashboard/contact", icon: PhoneCall },
 ];
