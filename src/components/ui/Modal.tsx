@@ -26,11 +26,11 @@ export default function Modal({ isOpen, onClose, title, children, size = "md" }:
   }, [isOpen]);
 
   const sizeClasses = {
-    sm: "max-w-md",
-    md: "max-w-lg",
-    lg: "max-w-2xl",
-    xl: "max-w-4xl",
-    full: "max-w-full h-full rounded-none",
+    sm: "max-w-md rounded-3xl max-h-[calc(100vh-2rem)] sm:max-h-[calc(100vh-3rem)] md:max-h-[calc(100vh-5rem)]",
+    md: "max-w-lg rounded-3xl max-h-[calc(100vh-2rem)] sm:max-h-[calc(100vh-3rem)] md:max-h-[calc(100vh-5rem)]",
+    lg: "max-w-2xl rounded-3xl max-h-[calc(100vh-2rem)] sm:max-h-[calc(100vh-3rem)] md:max-h-[calc(100vh-5rem)]",
+    xl: "max-w-4xl rounded-3xl max-h-[calc(100vh-2rem)] sm:max-h-[calc(100vh-3rem)] md:max-h-[calc(100vh-5rem)]",
+    full: "max-w-full h-full max-h-full rounded-none",
   };
 
   return (
@@ -52,7 +52,7 @@ export default function Modal({ isOpen, onClose, title, children, size = "md" }:
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 15 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className={`relative w-full bg-white rounded-3xl border border-slate-100 shadow-2xl flex flex-col overflow-hidden my-auto z-10 ${sizeClasses[size]}`}
+            className={`relative w-full bg-white border border-slate-100 shadow-2xl flex flex-col overflow-hidden my-auto z-10 ${sizeClasses[size]}`}
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100 bg-white sticky top-0 z-20">
