@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -78,9 +77,6 @@ export default function Footer() {
           {/* Company Brief */}
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-lg bg-accent-blue flex items-center justify-center text-white">
-                <Pill className="w-5 h-5 rotate-45" />
-              </div>
               <span className="font-bold text-lg text-white tracking-tight">
                 Reckron<span className="text-accent-blue">SP</span>
               </span>
