@@ -9,7 +9,7 @@ export default function Footer() {
   const pathname = usePathname();
   const [contact, setContact] = useState<Partial<IContactInfo>>({
     email: "info@reckronsp.com",
-    phone: "+1 (555) 019-2834",
+    phone: "+1 (555) 019-2834w",
     address: "100 Innovation Way, Biotech Park, Suite 400"
   });
   const [newsletterEmail, setNewsletterEmail] = useState("");
